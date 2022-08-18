@@ -1,30 +1,31 @@
-import React, { useState } from 'react'
-import $ from 'jquery';
+import React from 'react'
+import { useRef, useState } from 'react';
 
+function Slider(props) {
 
-function slider(props) {
+  //
+  const [output, setOutput] = useState(1)
+  
+  //accessing the input tag
+  const inputTag = useRef()
+  
+  function setValue(){
 
-  // const [state, setState] = useState();
+    //modifying 'output'
+    setOutput(inputTag.current.value)
 
-  // const setValue = (e)  =>{
-  //   setState(e.current.val)
-  // }
-  function setValue(e){
-    props.changeOpacity(e.current.val)
+    //modifying state variable 'opacity'
+    props.setOpacity(inputTag.current.value);
   }
 
-  $('#opacity-slider').on("change mousemove", function() {
-    $('#slider-value').html($(this).val());
-    console.log($(this).val())
-    props.changeOpacity($(this).val());
-  });
+
     
   return (
     <div class="slider-wrapper">
-    <input type="range"   min="0" max="1" id="opacity-slider" step="0.01" onChange={setValue}/>
-    <output for="opacity-slider" id="slider-value" >0.85</output>
+    <input type="range"   min="0" max="1" id="opacity-slider" step="0.01" onChange={setValue} ref={inputTag}/>
+    <output for="opacity-slider" id="slider-value" >{output}</output>
     </div>
   )
 }
 
-export default slider
+export default Slider
