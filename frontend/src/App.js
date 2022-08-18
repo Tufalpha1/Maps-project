@@ -1,10 +1,20 @@
-import * as React from 'react';
+import { useState } from 'react';
 import Map, {Marker, Source, Layer} from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { IoLocationSharp } from 'react-icons/io5';
+import Slider from './components/Slider';
+import './styles/styles.css'
+
 function App() {
+  const [opacity, setOpacity]= useState(0.85)
+  
+      function changeOpacity(getOpacity){
+        setOpacity(getOpacity)
+       
+      }
   return (
     <div className="App">
+          <h1 class="heading">Map image overlay</h1>
      <Map
      initialViewState={{
         longitude: 73.1730,
@@ -23,23 +33,27 @@ function App() {
         <Source
           id="map-source"
           type="image"
-          url="https://docs.mapbox.com/mapbox-gl-js/assets/radar.gif"
+          url="https://i.postimg.cc/dQNDzHV9/gulberg.jpg"
           coordinates={[
-            [-80.425, 46.437],
-            [-71.516, 46.437],
-            [-71.516, 37.936],
-            [-80.425, 37.936]
+            [73.18068027777778, 33.5985833],
+            [73.20764416666667, 33.5985833],
+            [73.20764444444444, 33.6154667],
+            [73.18068027777778, 33.6154667]
           ]}
         />
         <Layer
            id="overlay"
            source="map-source"
            type="raster"
-           paint={{ "raster-opacity": 0.85 }}
+           paint={{ "raster-opacity": opacity }}
         />
      </Map>
+     <Slider
+        changeOpacity = {changeOpacity}
+     />  
     </div>
   );
 }
+
 
 export default App;
