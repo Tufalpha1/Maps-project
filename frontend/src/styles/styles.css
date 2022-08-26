@@ -1,6 +1,10 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@500&display=swap');
+
 *{
     font-family: 'Mulish', sans-serif;
 }
+
 .heading{
   text-align: center;
   padding-top: 2rem;
@@ -8,9 +12,9 @@
 
 .slider-wrapper{
     position: absolute;
-    top: 50%;
+    top: 35%;
     transform: rotate(270deg);
-    left: 80%;
+    left: 45%;
     box-shadow: 1px 3px 10px rgba(10, 10, 10, 0.5);
     border: 0.07rem solid rgb(100,100,100);
     background: rgba(30,30,30,0.85);
@@ -25,4 +29,10 @@
 output {
     display: inline-block;
     width:25px;
+}
+
+.inputs{
+    position: absolute;
+    top: 20%;
+    left: 55%;
 }
