@@ -17,9 +17,9 @@ function Slider(props) {
   }
     
   return (
-    <div class="slider-wrapper">
+    <div className="slider-wrapper">
     <input type="range"   min="0" max="1" id="opacity-slider" step="0.01" onChange={setValue} ref={inputTag}/>
-    <output for="opacity-slider" id="slider-value" >{output}</output>
+    <output htmlFor="opacity-slider" id="slider-value" >{output}</output>
     </div>
   )
 }
