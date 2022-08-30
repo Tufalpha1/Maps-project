@@ -110,7 +110,6 @@ const Uploader = (props) => {
           placeholder="url"
           size="45"
           />
-          <button type="submit" onClick={setUrl}>Submit</button>
          </form>
       </div>
     </>
