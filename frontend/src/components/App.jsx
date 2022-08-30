@@ -15,6 +15,8 @@ function App() {
   //setUserInput states
   const [userInput, setUserInput]= useState([])
   
+  const [imageUrl, setImageUrl]= useState("")
+
   return (
     <div className="App">
       <h1 className="heading">Map image overlay</h1>
@@ -38,7 +40,7 @@ function App() {
         <Source
           id="map-source"
           type="image"
-          url="https://i.postimg.cc/dQNDzHV9/gulberg.jpg"
+          url= {imageUrl}   //https://i.postimg.cc/dQNDzHV9/gulberg.jpg
           coordinates={[
             //these are the coordinates that i had previously... do not delete them
             // [73.18068027777778, 33.5985833],
@@ -59,9 +61,8 @@ function App() {
           paint={{ "raster-opacity": Number(opacity) }}
         />
       </Map>
-      {/* passing setOpacity to slider */}
       <Slider setOpacity={setOpacity} />
-      <Uploader setUserInput={setUserInput} />
+      <Uploader setUserInput={setUserInput} setImageUrl={setImageUrl}/>
     </div>
   );
 }

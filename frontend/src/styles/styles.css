@@ -1,6 +1,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@500&display=swap');
 
+
 *{
     font-family: 'Mulish', sans-serif;
 }
@@ -35,4 +36,28 @@ output {
     position: absolute;
     top: 20%;
     left: 55%;
+}
+
+.url-input{
+    position: absolute;
+    top: 60%;
+    left: 55%;
+}
+@media (max-width: 1050px){
+    .slider-wrapper{
+    position: absolute;
+    top: 65%;
+    transform: rotate(360deg);
+    left: 10%;
+    box-shadow: 1px 3px 10px rgba(10, 10, 10, 0.5);
+    border: 0.07rem solid rgb(100,100,100);
+    background: rgba(30,30,30,0.85);
+    padding: 7px 15px 8px;
+    border-radius: 0 0 10px;
+    color: #ddd;
+    }
+
+    #slider-value{
+        transform: rotate(0deg);
+    }
 }

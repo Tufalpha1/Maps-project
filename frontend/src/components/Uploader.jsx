@@ -13,6 +13,8 @@ const Uploader = (props) => {
   const seventhInput = useRef()
   const eighthInput = useRef()
 
+  const imageSource= useRef()
+
   const setInput = ()=>{
     const coords =[
       firstInput.current.value,
@@ -27,6 +29,9 @@ const Uploader = (props) => {
     props.setUserInput(coords);
   }
 
+  const setUrl = ()=>{
+    props.setImageUrl(imageSource.current.value)
+  }
 
   return (
     <>
@@ -94,6 +99,19 @@ const Uploader = (props) => {
           placeholder="longitude"
           onChange={setInput}
         />
+      </div>
+      <div className="url-input">
+         <form>
+          <label>Enter the image url for overlay:</label>
+          <input 
+          ref={imageSource}
+          onChange={setUrl}
+          type="text"
+          placeholder="url"
+          size="45"
+          />
+          <button type="submit" onClick={setUrl}>Submit</button>
+         </form>
       </div>
     </>
   );
