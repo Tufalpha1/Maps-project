@@ -101,7 +101,7 @@ const Uploader = (props) => {
         />
       </div>
       <div className="url-input">
-         <form>
+         <form onSubmit={setUrl}>
           <label>Enter the image url for overlay:</label>
           <input 
           ref={imageSource}
@@ -110,6 +110,7 @@ const Uploader = (props) => {
           placeholder="url"
           size="45"
           />
+          <button type="submit">Submit</button>
          </form>
       </div>
     </>
